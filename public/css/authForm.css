@@ -1,0 +1,89 @@
+:root {
+    --offWhite : #FFFBF7;
+    --darkBlue: rgb(14, 52, 96);
+    --gradientRed : rgb(243, 98, 91);
+    --gradientBlue : rgb(2, 75, 133);
+    --boxShadowPink : #FBD2CA;
+    --redOrange : rgb(243,103,90);
+    --yellow: rgb(255,180,92);
+}
+
+@font-face {
+    font-family: castledown-heavy;
+    src: url("../fonts/castledown-heavy.woff2");
+}
+
+@font-face {
+    font-family: inter-regular;
+    src: url("../fonts/Inter-Regular.woff2");
+}
+
+body {
+    font-family: inter-regular;
+    color: var(--darkBlue);
+    font-size: 16px;
+    background-color: var(--offWhite);
+}
+
+.row  {
+    width: 100vw;
+    height: 100vh;
+}
+
+.col-md-5, .col-md-7 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    width: 70%;
+    height: auto;
+}
+
+h1 {
+    font-family: castledown-heavy;
+    margin-bottom: 3rem;
+}
+
+form {
+    width: 50%;
+}
+
+input {
+    border-radius: 14px !important;
+    border: none;
+}
+
+form button {
+    margin-top: 2rem;
+    width: 100%;
+    padding: 0.7rem 3rem;
+    font-family: castledown-heavy;
+    font-size: 18px;
+    color: var(--offWhite);
+    background: linear-gradient(172.17deg, var(--redOrange) 0%, var(--yellow) 100%);
+    border-radius: 40px;
+    border: none;
+    opacity: 90%;
+    transition: all .5s ease;
+}
+
+form button:hover {
+    opacity: 100%;
+    background: linear-gradient(172.17deg, var(--yellow) 0%, var(--redOrange) 100%) !important;
+}
+
+@media (max-width: 767px) {
+    .row {
+        margin-right: 0;
+        margin-left: 0;
+    }
+    .col-md-5 {
+        display: none;
+    }
+    form {
+        width: 80%;
+    }
+}

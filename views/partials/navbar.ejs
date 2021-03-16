@@ -1,0 +1,32 @@
+<!-- Navbar -->
+<nav class="navbar smart-scroll navbar-expand-lg container">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/events"><img src="/imgs/icon-dark.00542ef5.svg" alt=""></a>
+        <div class="d-flex">
+            <% if(!currentUser) {%> 
+                <a class="nav-link" href="/login" >
+                    <span>Login</span>
+                    <svg width="13px" height="10px" viewBox="0 0 13 10">
+                        <path d="M1,5 L11,5"></path>
+                        <polyline points="8 1 12 5 8 9"></polyline>
+                    </svg>
+                </a>
+                <a class="nav-link" href="/signup" >
+                    <span>Sign Up</span>
+                    <svg width="13px" height="10px" viewBox="0 0 13 10">
+                        <path d="M1,5 L11,5"></path>
+                        <polyline points="8 1 12 5 8 9"></polyline>
+                    </svg>
+                </a>
+            <% } else {%> 
+                <a class="nav-link" href="/logout">
+                    <span>Log out</span>
+                    <svg width="13px" height="10px" viewBox="0 0 13 10">
+                        <path d="M1,5 L11,5"></path>
+                        <polyline points="8 1 12 5 8 9"></polyline>
+                    </svg>
+                </a>
+            <% } %> 
+        </div>
+    </div>
+</nav>

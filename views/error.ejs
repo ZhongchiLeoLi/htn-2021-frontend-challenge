@@ -1,0 +1,26 @@
+<% layout('layouts/eventsBoilerplate') %> 
+
+<style>
+    .title img {
+        max-width: 70%;
+    }
+    @media (max-width: 767px) {
+        .title img {
+            display: none;
+        }
+    }
+</style>
+
+<div class="title row">
+    <div class="col-md-6">
+        <img src="/imgs/FourOFour.png" alt="404">
+    </div>
+    <div class="col-md-6">
+        <h1 class="alert-heading"><%= err.message %></h1>
+        <!-- <% if(process.env.NODE_ENV !== "production") { %> 
+            <p><%= err.stack %> </p>
+        <% } %>  -->
+        <hr>
+        <a href="/events" class="alert-link mb-0">Head back to Events Page</a>
+    </div>
+</div>

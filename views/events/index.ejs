@@ -1,0 +1,118 @@
+<!-- Import layout -->
+<% layout('layouts/eventsBoilerplate') %> 
+
+<!-- Title section -->
+<section class="title row">
+    <div class="col-md-6">
+        <h1>Featured Events</h1>
+    </div>
+    <div class="col-md-6">
+        <img src="imgs/hero-illustration.png" alt="">
+    </div>
+</section>
+
+<!-- Tabbed interface navigation -->
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="all-tab" data-bs-toggle="tab" data-bs-target="#all" type="button" role="tab" aria-controls="all" aria-selected="true">All</button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="workshop-tab" data-bs-toggle="tab" data-bs-target="#workshop" type="button" role="tab" aria-controls="workshop" aria-selected="false">Workshops</button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="techtalk-tab" data-bs-toggle="tab" data-bs-target="#techtalk" type="button" role="tab" aria-controls="techtalk" aria-selected="false">Tech Talks</button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="activity-tab" data-bs-toggle="tab" data-bs-target="#activity" type="button" role="tab" aria-controls="activity" aria-selected="false">Activities</button>
+    </li>
+</ul>
+
+<!-- Tabbed interface content -->
+<div class="tab-content" id="myTabContent">
+    <!-- All events -->
+    <div class="tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="all-tab">
+        <section class="event-list">
+            <!-- Create a card for every event in events -->
+            <% for (let event of events) { %>
+                <a href="/events/<%=event.id%>" class="event card">
+                    <img src="<%=event.img.url%>" class="card-img-top" alt="<%=event.img.alt%>">
+                    <div class="card-body">
+                        <h5 class="card-title"><%=event.name%></h5>
+                        <% if (event.speakers.length) {%> 
+                            <!-- Display the speakers' names separated by commas -->
+                            <h6 class="card-subtitle mb-2 text-muted">With <% event.speakers.forEach(function (speaker, index) { %><%=speaker.name%><%( index == event.speakers.length - 1 ) ? ',' : ''%><% }) %></h6>
+                        <% } %> 
+                        <p class="card-text"><%=event.time_display%></p>
+                    </div>
+                </a>
+            <% } %> 
+        </section>
+    </div>
+    <!-- Workshop events -->
+    <div class="tab-pane fade" id="workshop" role="tabpanel" aria-labelledby="workshop-tab">
+        <section class="event-list">
+            <!-- Filter out the workshops from events -->
+            <% let workshops = events.filter( event => event.event_type == 'workshop' ); %>
+            <% for (let event of workshops) { %>
+                <a href="/events/<%=event.id%>" class="event card">
+                    <img src="<%=event.img.url%>" class="card-img-top" alt="<%=event.img.alt%>">
+                    <div class="card-body">
+                        <h5 class="card-title"><%=event.name%></h5>
+                        <% if (event.speakers.length) {%> 
+                            <!-- Display the speakers' names separated by commas -->
+                            <h6 class="card-subtitle mb-2 text-muted">With <% event.speakers.forEach(function (speaker, index) { %><%=speaker.name%><%( index == event.speakers.length - 1 ) ? ',' : ''%><% }) %></h6>
+                        <% } %> 
+                        <p class="card-text"><%=event.time_display%></p>
+                    </div>
+                </a>
+            <% } %> 
+        </section>
+    </div>
+    <!-- Tech Talk events -->
+    <div class="tab-pane fade" id="techtalk" role="tabpanel" aria-labelledby="techtalk-tab">
+        <section class="event-list">
+            <!-- Filter out the tech talks from events -->
+            <% let techtalks = events.filter( event => event.event_type == 'tech_talk' ); %>
+            <% for(let event of techtalks) { %>
+                <a href="/events/<%=event.id%>" class="event card">
+                    <img src="<%=event.img.url%>" class="card-img-top" alt="<%=event.img.alt%>">
+                    <div class="card-body">
+                        <h5 class="card-title"><%=event.name%></h5>
+                        <% if (event.speakers.length) {%> 
+                            <!-- Display the speakers' names separated by commas -->
+                            <h6 class="card-subtitle mb-2 text-muted">With <% event.speakers.forEach(function (speaker, index) { %><%=speaker.name%><%( index == event.speakers.length - 1 ) ? ',' : ''%><% }) %></h6>
+                        <% } %> 
+                        <p class="card-text"><%=event.time_display%></p>
+                    </div>
+                </a>
+            <% } %> 
+        </section>
+    </div>
+    <!-- Activity events -->
+    <div class="tab-pane fade" id="activity" role="tabpanel" aria-labelledby="activity-tab">
+        <section class="event-list">
+            <!-- Filter out the activities from events -->
+            <% let activities = events.filter( event => event.event_type == 'activity' ); %>
+            <% for (let event of activities) { %>
+                <a href="/events/<%=event.id%>" class="event card">
+                    <img src="<%=event.img.url%>" class="card-img-top" alt="<%=event.img.alt%>">
+                    <div class="card-body">
+                        <h5 class="card-title"><%=event.name%></h5>
+                        <% if (event.speakers.length) {%> 
+                            <!-- Display the speakers' names separated by commas -->
+                            <h6 class="card-subtitle mb-2 text-muted">With <% event.speakers.forEach(function (speaker, index) { %><%=speaker.name%><%( index == event.speakers.length - 1 ) ? ',' : ''%><% }) %></h6>
+                        <% } %> 
+                        <p class="card-text"><%=event.time_display%></p>
+                    </div>
+                </a>
+            <% } %> 
+        </section>
+    </div>
+</div>
+
+<!-- Display a login button if user is not logged in -->
+<% if(!currentUser) { %> 
+    <div class="cta">
+        <a href="/login">Log in to view the full list of events!</a>
+    </div>
+<% } %> 
