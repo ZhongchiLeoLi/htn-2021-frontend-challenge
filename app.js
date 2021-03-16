@@ -72,7 +72,7 @@ passport.deserializeUser(Hacker.deserializeUser());
 
 // Middleware for flashing messages
 app.use((req, res, next) => {
-    res.locals.currentUser = req.user;
+    res.locals.currentUser = req.user; // store the user if there is one logged in
     res.locals.success = req.flash('success');
     res.locals.error = req.flash('error');
     next();

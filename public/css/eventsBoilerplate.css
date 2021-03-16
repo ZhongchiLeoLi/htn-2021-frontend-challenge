@@ -30,7 +30,7 @@ body {
     background-color: var(--offWhite);
 }
 
-/* Nav section */
+/* Navbar section */
 a, a:hover, a:focus, a:active {
     text-decoration: none;
     color: inherit;
@@ -87,7 +87,6 @@ nav .nav-link svg {
     
 nav .nav-link:hover:before {
     width: 100%;
-    /* background: rgba(var(--gradientRed),1) */
 }
 
 nav .nav-link:hover svg {
@@ -319,6 +318,12 @@ nav .nav-link:last-child {
 }
 
 @media (max-width: 767px) {
+    .nav-tabs .nav-link {
+        margin-right: 0;
+    }
+    .nav-tabs {
+        justify-content: space-between;
+    }
     .event-list {
         margin-right: 0rem;
         margin-left: 0rem;
@@ -337,10 +342,9 @@ nav .nav-link:last-child {
 
 @media (max-width: 575px) {
     .nav-tabs .nav-link {
-        font-size: 0.85rem;
-        padding: 0.3rem 0.74rem !important;
+        font-size: 0.80rem;
+        padding: 0.3rem 0.6rem !important;
         min-width: 4rem;
-        margin-right: 0rem;
     }
 }
 
