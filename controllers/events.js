@@ -1,4 +1,5 @@
 const axios = require('axios').default;
+const eventsJson = require('./hackthenorth_events.json')
 
 let eventsSorted = [];
 
@@ -43,8 +44,7 @@ async function getProfileImages() {
 // Export index page
 module.exports.index = async (req, res) => {
     // Fetch events data
-    const result = await axios.get('https://api.hackthenorth.com/v3/graphql?query={ events { id name event_type permission start_time end_time description speakers { name profile_pic } public_url private_url related_events } }')
-    let events = result.data.data.events;
+    let events = eventsJson.data.events;
 
     // Fetch placeholder images from unsplash
     const eventImgs = await getEventImages();

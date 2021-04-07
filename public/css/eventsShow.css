@@ -1,7 +1,7 @@
 :root {
-    --redOrange : rgb(243,103,90);
-    --lightBlue : #008Ac4;
-    --yellow: rgb(255,180,92);
+    --redOrange : #FF3A00;
+    --lightBlue : #00AEE0;
+    --yellow: #FFB400;
 }
 
 /* Title section */
@@ -140,8 +140,13 @@
     border-radius: 14px;
 }
 
+.filler {
+    height: 350px;
+}
+
 .sub-title{
-    font-family: castledown-heavy;
+    font-family: Heebo-bold;
+    font-weight: 800;
     font-size: 35px;
     -webkit-text-fill-color: transparent;
     background: linear-gradient(172.17deg, var(--redOrange) 0%, var(--yellow) 100%);
@@ -151,7 +156,8 @@
 
 .urls a  {
     padding: 0.7rem 3rem;
-    font-family: castledown-heavy;
+    font-family: Heebo-bold;
+    font-weight: 800;
     font-size: 18px;
     color: var(--offWhite);
     background: linear-gradient(172.17deg, var(--redOrange) 0%, var(--yellow) 100%);
@@ -193,5 +199,8 @@
     }
     .back {
         display: none;
+    }
+    .filler {
+        height: 200px;
     }
 }

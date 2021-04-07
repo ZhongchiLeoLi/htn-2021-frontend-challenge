@@ -1,16 +1,16 @@
 :root {
     --offWhite : #FFFBF7;
-    --darkBlue: rgb(14, 52, 96);
-    --gradientRed : rgb(243, 98, 91);
-    --gradientBlue : rgb(2, 75, 133);
+    --darkBlue: #04294F;
+    --gradientRed : #FF3A00;
+    --gradientBlue : #04294F;
     --boxShadowPink : #FBD2CA;
     --redOrange : rgb(243,103,90);
-    --yellow: rgb(255,180,92);
+    --yellow: #FFB400;
 }
 
 @font-face {
-    font-family: castledown-heavy;
-    src: url("../fonts/castledown-heavy.woff2");
+    font-family: Heebo-bold;
+    src: url("../fonts/Heebo-VariableFont_wght.woff2");
 }
 
 @font-face {
@@ -43,7 +43,8 @@ img {
 }
 
 h1 {
-    font-family: castledown-heavy;
+    font-family: Heebo-bold;
+    font-weight: 800;
     margin-bottom: 3rem;
 }
 
@@ -60,7 +61,8 @@ form button {
     margin-top: 2rem;
     width: 100%;
     padding: 0.7rem 3rem;
-    font-family: castledown-heavy;
+    font-family: Heebo-bold;
+    font-weight: 800;
     font-size: 18px;
     color: var(--offWhite);
     background: linear-gradient(172.17deg, var(--redOrange) 0%, var(--yellow) 100%);
