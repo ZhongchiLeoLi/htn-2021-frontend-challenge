@@ -1,6 +1,20 @@
-# Zhongchi Li's Hack the North 2021 Frontend Developer Challenge Work Progress
+# Hack the North 2021 Frontend Developer Coding Challenge
 
 https://htnfrontendchallenge.herokuapp.com/events
+
+A website to display events for both hackers and the general public. Attendees would have to log in to access the full list of events and see the events' private links as hackers! 
+
+Feel free to register your own dummy account or use "leo" for both username and password to login!
+
+## How it was built
+
+* This frontend challenge is built using **Node**, **Express** and **EJS template engine**
+* **MongoDB** is used to store users' account information and their **Express-session** information
+* **Passport** is used to authorize and create new users
+* **Connet-flash** is used to flash success and error messages to users
+* The website is made fully responsive with custom CSS and **Bootstrap**
+
+## Project Write-up
 
 ### Setting Up
 
