@@ -131,6 +131,25 @@ nav .nav-link:last-child {
      background-color: var(--offWhite);
   }
 
+.github {
+    display: none;
+}
+
+.sourceCode {
+    display: block;
+}
+
+@media (max-width: 767px) {
+    .github {
+        display: block;
+    }
+    
+    .sourceCode {
+        display: none;
+    }
+}
+
+
 @media (max-width: 767px) {
     nav .nav-link {
         padding: 2px 10px;
