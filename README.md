@@ -4,7 +4,7 @@ https://htnfrontendchallenge.herokuapp.com/events
 
 A website to display events for both hackers and the general public. Attendees would have to log in to access the full list of events and see the events' private links as hackers! 
 
-Feel free to register your own dummy account or use "leo" for both username and password to login!
+Feel free to register your own dummy account or **use "leo" for both username and password to login!**
 
 ## How it was built
 
